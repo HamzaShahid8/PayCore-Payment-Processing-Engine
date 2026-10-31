@@ -72,8 +72,8 @@ def create_checkout_session(plan):
         logger.warning("Stripe Checkout session creation failed for payment %s", payment.id)
         raise StripeGatewayError("Stripe could not create a Checkout Session.") from exc
 
-    session_id = session.get("id")
-    checkout_url = session.get("url")
+    session_id = session.id
+    checkout_url = session.url
     if not isinstance(session_id, str) or not isinstance(checkout_url, str):
         payment.status = Payment.Status.FAILED
         payment.save(update_fields=["status", "updated_at"])
