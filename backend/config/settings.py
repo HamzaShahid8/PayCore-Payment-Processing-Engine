@@ -23,7 +23,7 @@ if not SECRET_KEY:
         raise ImproperlyConfigured("DJANGO_SECRET_KEY must be configured.")
 
 ALLOWED_HOSTS = [
-    "pay-core-payment-processing-engine.vercel.app",
+    ".vercel.app",
     "localhost",
     "127.0.0.1",
 ]
