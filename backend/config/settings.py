@@ -23,11 +23,9 @@ if not SECRET_KEY:
         raise ImproperlyConfigured("DJANGO_SECRET_KEY must be configured.")
 
 ALLOWED_HOSTS = [
-    host.strip()
-    for host in os.getenv(
-        "ALLOWED_HOSTS", "localhost,127.0.0.1,testserver,.vercel.app"
-    ).split(",")
-    if host.strip()
+    "pay-core-payment-processing-engine.vercel.app",
+    "localhost",
+    "127.0.0.1",
 ]
 
 INSTALLED_APPS = [
