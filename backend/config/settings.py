@@ -68,7 +68,8 @@ TEMPLATES = [
 ROOT_URLCONF = "config.urls"
 WSGI_APPLICATION = "config.wsgi.application"
 APPEND_SLASH = False
-STATIC_URL = "static/"
+STATIC_URL = "/static/"
+STATIC_ROOT = BASE_DIR / "staticfiles"
 
 database_url = os.getenv("DATABASE_URL")
 if database_url:

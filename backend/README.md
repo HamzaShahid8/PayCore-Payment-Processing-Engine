@@ -103,6 +103,13 @@ stripe listen --forward-to localhost:8000/api/stripe/webhook
 Set the printed `whsec_...` value as `STRIPE_WEBHOOK_SECRET`. Use a Stripe test
 card such as `4242 4242 4242 4242` with any future expiry and CVC.
 
+## Static files
+
+Django static files (including the admin CSS and JavaScript) are collected into
+`staticfiles/`. Vercel runs `collectstatic` during deployment and serves those
+files from its CDN at `/static/`. For a local production-style check, run
+`python manage.py collectstatic --noinput`.
+
 ## Vercel
 
 Set the Vercel project root to this `backend` directory. `vercel.json` routes
